@@ -1,0 +1,30 @@
+{
+  "name": "kittens",
+  "version": "1.0.0",
+  "description": "An app to select kittens",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ejonesy/Kittens.git"
+  },
+  "keywords": [
+    "kittens",
+    "select",
+    "app"
+  ],
+  "author": "Eve",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ejonesy/Kittens/issues"
+  },
+  "homepage": "https://github.com/ejonesy/Kittens#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.15.0"
+  }
+}

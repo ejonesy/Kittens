@@ -1,0 +1,1 @@
+INSERT INTO kittens (kitten_name) VALUES ("Bugsy"), ("Seymour"), ("Ruby"), ("Stereo"), ("Mossy"), ("Woolly");
