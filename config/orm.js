@@ -1,4 +1,6 @@
 var connection = require("./connection.js");
+//?? table or column name
+//? single value
 
 var orm = {
   selectAll: function(whatToSelect, tableInput) {
