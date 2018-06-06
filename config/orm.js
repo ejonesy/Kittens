@@ -3,29 +3,31 @@ var connection = require("./connection.js");
 //? single value
 
 var orm = {
-  selectAll: function(whatToSelect, tableInput) {
+  selectAll: function(tableInput, callback) {
     var queryString = "SELECT ?? FROM ??";
-    connection.query(queryString, [whatToSelect, tableInput], function(err, result) {
+    
+    connection.query(queryString, [tableInput, callback], function(err, result) {
       if (err) throw err;
       console.log(result);
     });
   },
-  insertOne: function(tableInput, colToSearch, valOfCol) {
+
+  //creates a new row, inserts it into the database
+  createOne: function(table, column, value, callback) {
     var queryString = "INSERT ?? FROM ?? WHERE ?? = ?";
-
     console.log(queryString);
-
-    connection.query(queryString, [tableInput, colToSearch, valOfCol], function(err, result) {
+    
+    connection.query(queryString, [table, column, value, callback], function(err, result) {
       if (err) throw err;
       console.log(result);
     });
   },
-  updateOne: function(whatToSelect, tableOne, tableTwo, onTableOneCol, onTableTwoCol) {
+  updateOne: function(table, value, condition, callback) {
     var queryString = "UPDATE ?? SET ?? WHERE ?? = ?";
 
     console.log(queryString);
 
-    connection.query(queryString, [whatToSelect, tableOne, tableTwo, onTableOneCol, onTableTwoCol], function(
+    connection.query(queryString, [table, value, condition, callback], function(
       err,
       result
     ) {
