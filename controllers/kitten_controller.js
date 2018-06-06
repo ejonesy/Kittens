@@ -1,5 +1,5 @@
 var express = require("express");
-var kitten = require("./models/kitten.js");
+var kitten = require("../models/kitten.js");
 var router = express.Router();
 
 router.get("/", function(req, res) {
