@@ -1,7 +1,7 @@
 var orm = require("../config/orm.js");
 
 var kitten = {
-    all: function(tableInput, callback) {
+    selectAll: function(tableInput, callback) {
         orm.selectAll("kittens", function(res) {
         callback(res);
       });

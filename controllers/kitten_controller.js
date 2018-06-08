@@ -2,7 +2,7 @@ var express = require("express");
 var kitten = require("../models/kitten.js");
 var router = express.Router();
 
-router.get("/", function(req, res) {
+router.get("/index", function(req, res) {
     kitten.selectAll(function(data) {
         var hbsObject = {
             kittens: data

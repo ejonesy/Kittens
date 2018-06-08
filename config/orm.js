@@ -37,9 +37,9 @@ var connection = require("./connection.js");
 
 var orm = {
   selectAll: function(tableInput, callback) {
-    var queryString = "SELECT ?? FROM ??";
+    var queryString = "SELECT * FROM ??";
     
-    connection.query(queryString, [tableInput, callback], function(err, result) {
+    connection.query(queryString, [tableInput], function(err, result) {
       if (err) throw err;
       console.log(result);
     });
@@ -50,7 +50,7 @@ var orm = {
     var queryString = "INSERT ?? FROM ?? WHERE ?? = ?";
     console.log(queryString);
     
-    connection.query(queryString, [table, column, value, callback], function(err, result) {
+    connection.query(queryString, [table, column, value], function(err, result) {
       if (err) throw err;
       console.log(result);
     });
@@ -60,7 +60,7 @@ var orm = {
 
     console.log(queryString);
 
-    connection.query(queryString, [table, value, condition, callback], function(
+    connection.query(queryString, [table, value, condition], function(
       err,
       result
     ) {
