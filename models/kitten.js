@@ -1,24 +1,24 @@
 var orm = require("../config/orm.js");
 
 var kitten = {
-    all: function(callback) {
-      orm.all("kittens", function(res) {
+    all: function(tableInput, callback) {
+        orm.selectAll("kittens", function(res) {
         callback(res);
       });
     },
-    // The variables cols and vals are arrays.
-    create: function(cols, vals, callback) {
-      orm.create("kittens", cols, vals, function(res) {
+    //The variables cols and vals are arrays.
+    create: function(table, column, value, callback) {
+      orm.create("kittens", "kitten_name", "devoured", function(res) {
         callback(res);
       });
     },
-    update: function(objColVals, condition, callback) {
-      orm.update("kittens", objColVals, condition, function(res) {
+    update: function(table, value, condition, callback) {
+      orm.update("kittens", "devoured", "true", function(res) {
         callback(res);
       });
     },
     delete: function(condition, callback) {
-      orm.delete("kittens", condition, function(res) {
+      orm.delete("kittens", "false", function(res) {
         callback(res);
       });
     }
